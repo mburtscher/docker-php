@@ -1,3 +1,2 @@
-#!/bin/bash
-
-./vendor/bin/jane-openapi generate docker-swagger.json 'Docker\API' generated
+#!/bin/bash -e
+./vendor/bin/jane-openapi generate -c .jane-openapi
