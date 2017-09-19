@@ -71,7 +71,7 @@ class ExecResource extends Resource
         $url        = '/v1.31/exec/{id}/start';
         $url        = str_replace('{id}', urlencode($id), $url);
         $url        = $url . ('?' . $queryParam->buildQueryString($parameters));
-        $headers    = array_merge(['Host' => 'localhost'], $queryParam->buildHeaders($parameters));
+        $headers    = array_merge(['Host' => 'localhost', 'Content-Type' => 'application/json'], $queryParam->buildHeaders($parameters));
         $body       = $this->serializer->serialize($execStartConfig, 'json');
         $request    = $this->messageFactory->createRequest('POST', $url, $headers, $body);
         $promise    = $this->httpClient->sendAsyncRequest($request);
