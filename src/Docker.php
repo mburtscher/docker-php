@@ -15,7 +15,6 @@ use Docker\Manager\TaskManager;
 use Docker\Manager\VolumeManager;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
-use Joli\Jane\Encoder\RawEncoder;
 use Symfony\Component\Serializer\Encoder\JsonDecode;
 use Symfony\Component\Serializer\Encoder\JsonEncode;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -107,8 +106,7 @@ class Docker
                     new JsonEncoder(
                         new JsonEncode(),
                         new JsonDecode()
-                    ),
-                    new RawEncoder()
+                    )
                 ]
             );
         }
